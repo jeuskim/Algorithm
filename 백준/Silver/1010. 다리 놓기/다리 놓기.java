@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 	
-	static double factorial_numerator(double m, double n) {
+	static long factorial_numerator(long m, long n) {
 		if (n == 0) {
 			return 1;
 		}
@@ -14,7 +14,7 @@ public class Main {
 		}
 	}
 	
-	static double factorial_denominator(double n) {
+	static long factorial_denominator(long n) {
 		if (n == 0 || n == 1) {
 			return 1;
 		}
@@ -27,16 +27,15 @@ public class Main {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		int T = scanner.nextInt();
-		double N = 0, M = 0;
+		long N = 0, M = 0;
 		
 		for (int i = 0; i < T; i++) {
-			N = scanner.nextDouble();
-			M = scanner.nextDouble();			
-			//System.out.printf("%f %f%n", factorial_numerator(M, N), factorial_denominator(N));
+			N = scanner.nextLong();
+			M = scanner.nextLong();			
 			if (M / 2 < N) {
 				N = M - N;
 			}
-			System.out.println((long)(factorial_numerator(M, N) / factorial_denominator(N)));
+			System.out.println((factorial_numerator(M, N) / factorial_denominator(N)));
 		}
 
 		scanner.close();
